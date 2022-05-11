@@ -5,27 +5,57 @@
     <title>Đăng Ký Học Viên</title>
 </head>
 <body>
-<form>
-    <fieldset style="color: blue;font-size: 20px;background-color: khaki">
-        <dt style="background-color: lightblue;color: blue;font-size: 200%">Đăng Ký Học Viên</dt>
-Họ và Tên: <input type="text" name="Yourname" size="100"><br>
-Ngày sinh: <input type="date" name="dob" size="100"><br>
-Giới tính: <input type="radio" name="grender" value="Nam" checked>Nam
-        <input type="radio" name="grender" value="Nữ">Nữ<br>
-Địa chỉ: <input type="text" name="address"><br>
-Lớp: <select>
-        <option value="class">-Chọn Lớp-</option>
-        <option value="0422i1">0422i1</option>
-        <option value="0422i2">0422i2</option>
-        <option value="0422i3">0422i3</option>
-        <option value="0422i4">0422i4</option>
-        <option value="0422i5">0422i5</option>
-    </select><br>
-Email: <input type="email" name="Email" size="50"><br>
-Điện Thoại: <input type="text" name="Sđt" size="25"><br>
-        <input type="submit" value="Đăng Kỳ" style="font-size: 20px">
-        <input type="reset" value="Nhập lại" style="font-size: 20px">
-    </fieldset>
-</form>
+<table border="0" style="background-color: khaki">
+    <tr>
+        <td colspan="4" style="font-size: 30px;color: blue;background-color: lightgreen">Đăng Ký Học Viên</td>
+    </tr>
+    <tr>
+        <td style="font-size: 20px;color: blue;text-align: left">Họ Và Tên</td>
+        <td colspan="3"><input type="text" size="50px"></td>
+    </tr>
+    <tr>
+        <td style="font-size: 20px;color: blue;text-align: left">Ngày Sinh</td>
+        <td colspan="3"><input type="text" ></td>
+    </tr>
+    <tr>
+        <td style="font-size: 20px;color: blue;text-align: left">Giới Tính</td>
+        <td>
+            <input type="radio" name="gender" style="font-size: 20px" checked>Nam
+            <input type="radio" name="gender" style="font-size: 20px">Nữ
+        </td>
+    </tr>
+    <tr>
+        <td style="font-size: 20px;color: blue;text-align:left" >Địa Chỉ</td>
+        <td><textarea></textarea></td>
+    </tr>
+    <tr>
+        <td style="font-size: 20px;color: blue;text-align: left">Lớp</td>
+        <td>
+            <select>
+            <option value="class">-Chọn Lớp-</option>
+            <option value="class">0422i1</option>
+            <option value="class">0422i2</option>
+            <option value="class">0422i3</option>
+            <option value="class">0422i4</option>
+            <option value="class">0422i5</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td style="font-size: 20px;color: blue;text-align: left">Email</td>
+        <td colspan="3"><input type="email" size="25"></td>
+    </tr>
+    <tr>
+        <td style="font-size: 20px;color: blue;text-align: left">Số Điện Thoại</td>
+        <td colspan="3"><input type="text" size="25"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+        <input type="submit" value="Đăng Ký">
+        <input type="reset" value="Nhập Lại">
+        </td>
+    </tr>
+</table>
 </body>
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form cơ bản</title>
+</head>
+<body>
+<form method="get" action="simpleform.html" class="wufoo">
+    <legend>Oder</legend>
+    <fieldset>
+        <b>What would you like to buy?</b><br>
+        <select>
+            <option value="cf">Vietnamese Coffee</option>
+            <option value="cf">Vietnamese Coffee with condensed milk</option>
+            <option value="cf">Vietnamese white Coffee</option>
+        </select>
+        <br>
+        <b>How many would you like to oder?</b><br>
+        <input type="radio" name="price" value="number" checked >1-10$<br>
+        <input type="radio" name="price" value="number">2-20$<br>
+        <input type="radio" name="price" value="number">3-30$<br>
+        Name<span style="color: red">*</span><br>
+        <input type="text" placeholder="First Name" name="Fname" size="30">
+        <input type="text" placeholder="Last Name" name="Lname" size="30"><br>
+        Email<br>
+        <input type="email" name="Email" size="40"><br>
+        Phone Number<br>
+        <input type="text" name="phone 1" size="10"/> -
+        <input type="text" name="phone 2" size="10"/> -
+        <input type="text" name="phone 3" size="10"/>
+        <br>
+        <br>
+        <input type="button" name="btSubmit" value="Submit">
+    </fieldset>
+</form>
+<style>
+    .wufoo{
+        font-family: "Lucida grande","lucida Sans Unicode",Tahoma,Sans-serif;
+    }
+</style>
+</body>
+</html>

@@ -7,6 +7,7 @@
 <body>
 <h2>Market Research Survey</h2>
 <p>Please take a few moments to complete this satisfaction survey.</p><hr>
+<form>
 <label for="age" style="font-weight: bold">What is your age range</label><br>
 <select id="age" name="age" style="width: 50%;font-size: 15px">
     <option value="age">18-24</option>
@@ -22,11 +23,32 @@
     <option value="salary">$100,000+</option>
 </select><br>
 <label style="font-weight: bold">Gender Identity</label><br>
-<input type="radio" name="gender" checked>Male<br>
-<input type="radio" name="gender" >Female<br>
-<input type="radio" name="gender" >Nonbinary<br>
-<input type="radio" name="gender" >Other<br>
-<input type="text"><br>
+<table border="0">
+    <tr>
+        <td><input type="radio" name="gender" id="Male" checked><br></td>
+        <td><label for="Male">Male</label></td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="gender" id="Female" ><br></td>
+        <td><label for="Female">Female</label></td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="gender" id="Nonbinary" ><br></td>
+        <td><label for="Nonbinary">Nonbinary</label></td>
+    </tr>
+<tr>
+    <td><label for="btn"><input type="radio" name="gender" id="btn"></label><br></td>
+    <td><label for="btn">Other</label></td>
+</tr>
+    <tr>
+        <td></td>
+        <td><input type="text" id="Number"</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td id="output"></td>
+        <td id="output2"></td>
+    </tr>
 <label style="font-weight: bold">Which of the following products have your purchased in the last 2 months. Please check all that apply.</label><br>
 <input type="checkbox"> Product 1 <br>
 <input type="checkbox"> Product 2 <br>
@@ -36,7 +58,20 @@
 <input type="radio" mame="time"> Weekly <br>
 <input type="radio" mame="time"> Monthly <br>
 <label>What would you pay for the new product?</label><br>
-$ <input type="text" size="4" placeholder="Dollar"> . <input type="text" size="2" placeholder="Cent"><br>
+<table>
+    <tr>
+        <td>$</td>
+        <td><input type="text" size="4"></td>
+        <td>.</td>
+        <td><input type="text" size="1"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Dollar</td>
+        <td></td>
+        <td>Cent</td>
+    </tr>
+</table>
 <label style="font-weight: bold">What features would you like to see in the new product.</label><br>
 <textarea style="width: 100%"></textarea><br>
 <span>Please rate your level of agreement with the following statements.</span>
@@ -72,5 +107,7 @@ $ <input type="text" size="4" placeholder="Dollar"> . <input type="text" size="2
     </tr>
 </table><br>
 <input type="submit" value="Submit">
+</form>
 </body>
 </html>
+<script src="JS/other.js"></script>

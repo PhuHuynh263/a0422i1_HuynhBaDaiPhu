@@ -49,15 +49,39 @@
         <td id="output"></td>
         <td id="output2"></td>
     </tr>
-<label style="font-weight: bold">Which of the following products have your purchased in the last 2 months. Please check all that apply.</label><br>
-<input type="checkbox"> Product 1 <br>
-<input type="checkbox"> Product 2 <br>
-<input type="checkbox"> Product 3 <br>
-<label style="font-weight: bold">How often would you use our new product?</label><br>
-<input type="radio" mame="time"> Daily <br>
-<input type="radio" mame="time"> Weekly <br>
-<input type="radio" mame="time"> Monthly <br>
-<label>What would you pay for the new product?</label><br>
+</table>
+<label style="font-weight: bold">Which of the following products have your
+    purchased in the last 2 months. Please check all that apply.</label>
+    <table>
+        <tr>
+            <td><input type="checkbox" id="Product 1"></td>
+            <td><label for="Product 1">Product 1</label></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="Product 2"></td>
+            <td><label for="Product 2">Product 2</label></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="Product 3"></td>
+            <td><label for="Product 3">Product 3</label></td>
+        </tr>
+    </table>
+<label style="font-weight: bold">How often would you use our new product?</label>
+    <table>
+        <tr>
+            <td><input type="radio" id="Daily" name="time"></td>
+            <td><label for="Daily">Daily</label></td>
+        </tr>
+        <tr>
+            <td><input type="radio" id="Weekly" name="time"></td>
+            <td><label for="Weekly">Weekly</label></td>
+        </tr>
+        <tr>
+            <td><input type="radio" id="Monthly" name="time"></td>
+            <td><label for="Monthly">Monthly</label></td>
+        </tr>
+    </table>
+<lable style="font-weight: bold">What would you pay for the new product?</lable>
 <table>
     <tr>
         <td>$</td>

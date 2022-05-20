@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<body>
+<table width="70%" align="center" >
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            <input id="amount">
+        </td>
+        <td>
+            <select id="fromCurrency">
+                <option>VND</option>
+                <option>USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="toCurrency">
+                <option>USD</option>
+                <option>VND</option>
+            </select>
+        </td>
+        <td>
+            <button type="submit" onclick="currencyConversion()">Submit</button>
+        </td>
+    </tr>
+    <tr>
+        <td id="output" style="color: blue;font-size: 20px"></td>
+    </tr>
+</table>
+</body>
+<script>
+    function currencyConversion()
+    {
+        let result;
+        let amount = document.getElementById("amount").value
+        let fromCurrency =document.getElementById("fromCurrency").value
+        let toCurrency = document.getElementById("toCurrency").value
+        if (isNaN(amount) || amount <0)
+        {
+            alert('Bạn đã nhập sai kí tự hoặc số âm');
+            return 0;
+        }
+        if (fromCurrency == "VND" && toCurrency == "USD")
+        {
+            result=amount*23000;
+            output.innerText= 'Result : ' + result;
+            return 0;
+        }
+        if (fromCurrency == "USD" && toCurrency == "VND")
+        {
+            result = amount / 23000;
+            output.innerText= 'Result : ' + result;
+            return 0;
+        }
+        if (fromCurrency == toCurrency)
+        {
+            alert('Bạn chọn sai đơn vị chuyển đổi');
+            return 0;
+        }
+    }
+</script>
+</html>

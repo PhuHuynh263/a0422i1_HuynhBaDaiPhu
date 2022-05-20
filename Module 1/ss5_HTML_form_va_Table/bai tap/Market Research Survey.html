@@ -36,18 +36,17 @@
         <td><input type="radio" name="gender" id="Nonbinary" ><br></td>
         <td><label for="Nonbinary">Nonbinary</label></td>
     </tr>
-<tr>
-    <td><label for="btn"><input type="radio" name="gender" id="btn"></label><br></td>
-    <td><label for="btn">Other</label></td>
-</tr>
+    <tr>
+        <td><input type="radio" name="gender" id="other" onclick="otherCheck()"><br></td>
+        <td><label for="other">Other</label></td>
+    </tr>
     <tr>
         <td></td>
         <td><input type="text" id="Number"></td>
     </tr>
     <tr>
-        <td></td>
+        <td ></td>
         <td id="output"></td>
-        <td id="output2"></td>
     </tr>
 </table>
 <label style="font-weight: bold">Which of the following products have your
@@ -134,4 +133,10 @@
 </form>
 </body>
 </html>
-<script src="JS/other.js"></script>
+<script>
+   function otherCheck()
+   {
+    if (document.getElementById('other').checked)
+        output.innerText = 'Maximum of 250 characters.    Currently Used: 0 characters.'
+   }
+</script>

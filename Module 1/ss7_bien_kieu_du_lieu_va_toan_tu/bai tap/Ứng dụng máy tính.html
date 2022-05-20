@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<h1>Caculator</h1>
+<table>
+    <tr>
+        <td colspan="2"><input type="text" id="leftNumber"></td>
+        <td colspan="2"><input type="text" id="rightNumber"></td>
+    </tr>
+    <tr>
+        <td><button onclick="tinhTong()">Addition(+)</button></td>
+        <td><button onclick="tinhTru()">Subtraction(-)</button></td>
+        <td><button onclick="tinhNhan()">Multiplication(x)</button></td>
+        <td><button onclick="tinhChia()">Divison(/)</button></td>
+    </tr>
+</table>
+</body>
+<script>
+    function tinhTong()
+    {
+        let rightNumber = eval(document.getElementById("rightNumber").value);
+        let leftNumber = eval(document.getElementById("leftNumber").value);
+        let Addition =  leftNumber + rightNumber;
+        alert('Result : ' + Addition)
+    }
+    function tinhTru()
+    {
+        let rightNumber = document.getElementById("rightNumber").value;
+        let leftNumber = (document.getElementById("leftNumber").value;
+        let Subtraction = leftNumber - rightNumber;
+        alert('Result : ' + Subtraction);
+    }
+    function tinhNhan()
+    {
+        let rightNumber = document.getElementById("rightNumber").value;
+        let leftNumber = document.getElementById("leftNumber").value;
+        let Multiplication = leftNumber * rightNumber;
+        alert('Result : ' + Multiplication);
+    }
+    function tinhChia()
+    {
+        let rightNumber = document.getElementById("rightNumber").value;
+        let leftNumber = document.getElementById("leftNumber").value;
+        let Divison = leftNumber / rightNumber;
+        alert('Result : ' + Divison);
+    }
+</script>
+</html>

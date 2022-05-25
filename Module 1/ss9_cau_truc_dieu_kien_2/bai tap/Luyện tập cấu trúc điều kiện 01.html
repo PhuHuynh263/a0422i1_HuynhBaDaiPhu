@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 01</title>
+</head>
+<body>
+<h2>Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không</h2>
+<button onclick="tinh()">Tính</button><br>
+<h2>Bài 2: Nhập tuổi và in ra kết quả nếu tuổi học sinh đó không đủ điều kiện vào học lớp 10.</h2>
+<button onclick="age()">Nhập tuổi</button><br>
+<h2>Bài 3: Nhập một số nguyên bất kỳ và in kết quả ra màn hình để nói cho người dùng biết số đó là lớn hay nhỏ hơn 0</h2>
+<button onclick="result()">Nhập số nguyên</button><br>
+<h2>Bài 4: Nhập 3 số nguyên và tìm giá trị lớn nhất của ba số nguyên đó</h2>
+<button onclick="max()">GTLN</button><br>
+<h2>Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ</h2>
+<button onclick="rank()">Xếp hạng</button><br>
+<h2>Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</h2>
+<button onclick="commission()">Hoa Hồng</button><br>
+<h2>Bài 7: Tính cước điện thoại cho một hộ gia đình với các thông số đã cho</h2>
+<button onclick="cuocDth()">Tính cước điện thoại</button>
+</body>
+<script>
+    function tinh() {
+        let a = parseInt(prompt('Mời bạn nhập số a'));
+        let b = parseInt(prompt('Mời bạn nhập số b'));
+        let mod = a%b;
+        if (mod == 0)
+        {
+            alert('a chia hết cho b');
+        } else {
+            alert('a không chia hết cho b');
+        }
+    }
+    function age() {
+        let age = parseInt(prompt('Mời bạn nhập tuổi của học sinh'));
+        if (age == 15) {
+            alert('Thí sinh không đủ điều kiện thi lớp 10');
+        }else {
+            alert('Thí sinh đủ điều kiện thi lớp 10');
+        }
+    }
+    function result() {
+        let soNguyen = parseInt(prompt('Mời bạn nhập số nguyên'));
+        if (soNguyen > 0){
+            alert('Số nguyên này lớn hơn 0');
+        }else if (soNguyen == 0){
+            alert('Đây là số 0');
+        }else {
+            alert('Số nguyên này bé hơn 0');
+        }
+
+    }
+    function max() {
+        let a = parseInt(prompt('Mời bạn nhập số nguyên thứ nhất'));
+        let b = parseInt(prompt('Mời bạn nhập số nguyên thứ hai'));
+        let c = parseInt(prompt('Mời bạn nhập số nguyên thứ ba'));
+        let max = a;
+        if (a > b){
+            if (a > c){
+                alert('GTLN : ' + max);
+            } else {
+                max = c;
+                alert('GTLN : ' + max);
+            }
+        } else if (b > c){
+            max = b;
+            alert('GTLN : ' + max);
+        } else {
+            max = c;
+            alert('GTLN : ' + max);
+        }
+    }
+    function rank() {
+        let diemMieng = parseFloat(prompt('Mời bạn nhập điểm miệng'));
+        let diem15p = parseFloat(prompt('Mời bạn nhập điểm 15p'));
+        let diem1Tiet = parseFloat(prompt('Mời bạn nhập điểm một tiết'));
+        let diemHocky = parseFloat(prompt('Mời bạn nhập điểm học kỳ'));
+        let average = (diemMieng + diem15p + diem1Tiet*2 + diemHocky*3)/7;
+        if (average >= 8){
+            alert('Bạn được học sinh giỏi');
+        }else if (6.5<=average && average<8){
+            alert('Bạn được học sinh khá');
+        }else if (5<=average  && average<6.5){
+            alert('Bạn được học sinh trung bình');
+        }else if (3<=average && average<5){
+            alert('Bạn được học sinh yếu');
+        }else if (0<average && average < 3){
+            alert('Bạn được học sinh kém và không được lên lớp');
+        }else if (average == 0){
+            alert('Bạn không được lên lớp');
+        }else {
+            alert('Bạn nhập sai đơn vị điểm');
+        }
+    }
+    function commission() {
+        let x = parseInt(prompt('Mời bạn nhập số thu đợt này (triệu đồng)'));
+        let money;
+        if (x >= 100){
+            money = x*5/100;
+            alert('Hoa Hồng đợt này của bạn: ' + money + ' triệu đồng');
+        }else if (x >= 300){
+            money = x*10/100;
+            alert('Hoa Hồng đợt này của bạn: ' + money + ' triệu đồng');
+        }else if (x >= 500){
+            money = x*25/100;
+            alert('Hoa Hồng đợt này của bạn: ' + money + ' triệu đồng');
+        }else if (x < 100){
+            alert('Doanh số đợt này của bạn không đủ để nhận hoa hồng!');
+        }
+    }
+    function cuocDth() {
+        let noiMang = parseInt(prompt('Mời bạn nhập thời lượng cuộc gọi nội mạng trong ngày (giây)'));
+        let ngoaiMang = parseInt(prompt('Mời bạn nhập thời lượng cuộc gọi ngoại mạng trong ngày (giây)'));
+        let phiNoimang;
+        let phiNgoaimang;
+        if (1<= noiMang && noiMang <=6){
+            phiNoimang = 119;
+            alert('Tiền cước nội mạng : ' + phiNoimang + ' đồng');
+        }else if (6 < noiMang && noiMang < 60){
+            phiNoimang = 119 + (noiMang-6)*19.83;
+            alert('Tiền cước nội mạng : ' + phiNoimang + ' đồng');
+        }else if (noiMang == 60){
+            phiNoimang = 1190;
+            alert('Tiền cước nội mạng : ' + phiNoimang + ' đồng');
+        }else if (noiMang > 60){
+            phiNoimang = 1190*noiMang/60;
+            alert('Tiền cước nội mạng : ' + phiNoimang + ' đồng');
+        }
+        if (1<= ngoaiMang && ngoaiMang <=6){
+            phiNgoaimang = 139;
+            alert('Tiền cước nội mạng : ' + phiNgoaimang + ' đồng');
+        }else if (6 < ngoaiMang && ngoaiMang < 60){
+            phiNgoaimang = 139 + (noiMang-6)*23.16;
+            alert('Tiền cước nội mạng : ' + phiNgoaimang + ' đồng');
+        }else if (ngoaiMang == 60){
+            phiNgoaimang = 1390;
+            alert('Tiền cước nội mạng : ' + phiNgoaimang + ' đồng');
+        }else if (ngoaiMang > 60){
+            phiNgoaimang = 1390*noiMang/60;
+            alert('Tiền cước nội mạng : ' + phiNgoaimang + ' đồng');
+        }
+        let cuocDth = phiNoimang + phiNgoaimang;
+        alert('Tổng cước điện thoại : ' + cuocDth + ' đồng');
+    }
+</script>
+</html>

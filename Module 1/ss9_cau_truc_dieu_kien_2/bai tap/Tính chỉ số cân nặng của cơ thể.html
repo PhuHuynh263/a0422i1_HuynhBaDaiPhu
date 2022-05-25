@@ -6,8 +6,8 @@
 </head>
 <body>
 <script>
-    let weight = parseInt(prompt('Mời bạn nhập cân nặng (kg): '));
-    let height = parseInt(prompt('Mời bạn nhập chiều cao (m): '));
+    let weight = parseFloat(prompt('Mời bạn nhập cân nặng (kg): '));
+    let height = parseFloat(prompt('Mời bạn nhập chiều cao (m): '));
     let BMI = weight / (height^2)
     if (BMI >= 30){
         alert('Obese');

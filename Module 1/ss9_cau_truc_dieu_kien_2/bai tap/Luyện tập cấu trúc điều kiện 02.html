@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 02</title>
+</head>
+<body>
+<h2>Bài 1: Chuyển từ độ C sang độ F.</h2>
+<button onclick="bai1()">Chuyển đổi dộ C sang F</button>
+<br>
+<h2>Bài 2: Chuyển từ mét sang feet:</h2>
+<button onclick="bai2()">Đổi mét sang feet</button>
+<br>
+<h2>Bài 3: Tính diện tích hình vuông khi biết cạnh a.</h2>
+<button onclick="bai3()">Diện tích hình vuông</button>
+<br>
+<h2>Bài 4: Tính diện tích hình chữ nhật khi biết 02 cạnh a, b.</h2>
+<button onclick="bai4()">Diện tích hình chữ nhật</button>
+<br>
+<h2>Bài 5: Tính diện tích tam giác vuông khi biết 02 cạnh kề a, b.</h2>
+<button onclick="bai5()">Diện tích tam giác</button>
+<br>
+<h2>Bài 6: Giải phương trình bậc 1.</h2>
+<button onclick="bai6()">Giải</button>
+<br>
+<h2>Bài 7: Giải phương trình bậc 2.</h2>
+<button onclick="bai7()">Giải</button>
+<br>
+<h2>Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không. Một số nguyên là tuổi của một người khi nhỏ
+    120 và lơn hơn 0.</h2>
+<button onclick="bai8()">Nhập tuổi</button>
+<br>
+<h2>Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác.</h2>
+<button onclick="bai9()">Kiểm tra</button>
+<br>
+<h2>Bài 10: Viết chương trình tính giá điện.</h2>
+<button onclick="bai10()">Tính</button>
+<br>
+<h2>Bài 11: Viết chương trình tính thuế thu nhập cá nhân.</h2>
+<button onclick="bai11()">Tính thuế</button>
+<br>
+<h2>Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi
+    xuất hàng tháng.</h2>
+<button onclick="bai12()">Tính lãi</button>
+</body>
+<script>
+    function bai1() {
+        let C = parseFloat(prompt('Nhập nhiệt độ (C)'));
+        let F = C * 9 / 5 + 32;
+        alert('Độ F: ' + F);
+    }
+
+    function bai2() {
+        let m = parseFloat(prompt('Nhập mét: '));
+        let ft = m * 3.2808;
+        alert(m + ' m' + ' = ' + ft + ' ft');
+    }
+
+    function bai3() {
+        let a = parseFloat(prompt('Nhập cạnh hình vuông :'));
+        let S = a * a;
+        alert('Diện tích hình vuông cạnh ' + a + ' là : ' + S);
+    }
+
+    function bai4() {
+        let a = parseFloat(prompt('Nhập chiều dài hình chữ nhật :'));
+        let b = parseFloat(prompt('Nhập chiều rộng hình chữ nhật :'));
+        let S = a * b;
+        alert('Diện tích hình chữ nhật có chiều dài ' + a + ' và chiều rộng ' + b + ' là : ' + S);
+    }
+
+    function bai5() {
+        let a = parseFloat(prompt('Cạnh bên thứ nhất tam giác vuông:'));
+        let b = parseFloat(prompt('Cạnh bên thứ hai tam giác vuông:'));
+        let S = a * b / 2;
+        alert('Diện tích tam giác vuông có hai cạnh bên lần lượt ' + a + ' và ' + b + ' là : ' + S);
+    }
+
+    function bai6() {
+        let a = parseFloat(prompt('Mời bạn nhập hệ số a:'));
+        let b = parseFloat(prompt('Mời bạn nhập hệ số b:'));
+        let x;
+        if (a == 0) {
+            if (b == 0) {
+                alert('Phương trình vô số nghiệm');
+            } else alert('Phương trình vô nghiệm');
+        } else {
+            x = -b / a;
+            alert('Phương trình có nghiệm là : ' + x);
+        }
+    }
+
+    function bai7() {
+        let a = parseFloat(prompt('Mời bạn nhập hệ số a:'));
+        let b = parseFloat(prompt('Mời bạn nhập hệ số b:'));
+        let c = parseFloat(prompt('Mời bạn nhập hệ số c:'));
+        let x;
+        let x1;
+        let x2;
+        let denta = b ^ 2 - 4 * a * c;
+        if (a != 0) {
+            if (denta > 0) {
+                x1 = (-b + Math.sqrt(denta)) / 2 * a;
+                x2 = (b + Math.sqrt(denta)) / 2 * a;
+                alert('Phương trình trên có 2 nghiệm x1,x2 lần lượt là ' + x1 + ' và ' + x2);
+            } else if (denta == 0) {
+                x = -b / 2 * a;
+                alert('Phương trình trên có nghiệm là ' + x);
+            } else if (denta < 0) {
+                alert('Phương trình trên vô nghiệm');
+            }
+        } else {
+            x = -b / a;
+            alert('Phương trình trên có nghiệm : ' + x);
+        }
+    }
+
+    function bai8() {
+        let age = parseInt(prompt('Mời bạn nhập tuổi :'));
+        if (isNaN(age) || age < 0) {
+            alert('Bạn nhập sai yêu cầu!');
+        } else if (0 < age && age < 120) {
+            alert('Đây là tuổi một người');
+        } else {
+            alert('Đây không phải là tuổi của một người');
+        }
+    }
+
+    function bai9() {
+        let a = parseFloat(prompt('Mời bạn nhập số a'));
+        let b = parseFloat(prompt('Mời bạn nhập số b'));
+        let c = parseFloat(prompt('Mời bạn nhập số c'));
+        if (isNaN(a) || isNaN(b) || isNaN(c) || a < 0 || b < 0 || c < 0) {
+            alert('Bạn nhập sai yêu cầu!');
+        } else if (a + b > c && a + c > b && c + b > a) {
+            alert('Đây là cạnh của tam giác');
+        } else {
+            alert('Đây không phải cạnh của tam giác');
+        }
+    }
+
+    function bai10() {
+        let truDien = parseFloat(prompt('Nhập trữ điện gia đình dùng kWh/tháng:'));
+        let tienDien;
+        if (isNaN(truDien) || truDien <= 0) {
+            alert('Bạn nhập sai yêu cầu!');
+        } else if (0 < truDien && truDien <= 50) {
+            tienDien = 1.549 * truDien;
+            alert('Tiền điện tháng này: ' + tienDien + ' đồng');
+        } else if (51 <= truDien && truDien <= 100) {
+            tienDien = 1.734 * truDien;
+            alert('Tiền điện tháng này: ' + tienDien + ' đồng');
+        } else if (101 <= truDien && truDien <= 200) {
+            tienDien = 2.014 * truDien;
+            alert('Tiền điện tháng này: ' + tienDien + ' đồng');
+        } else if (201 <= truDien && truDien <= 300) {
+            tienDien = 2.536 * truDien;
+            alert('Tiền điện tháng này: ' + tienDien + ' đồng');
+        } else if (301 <= truDien && truDien <= 400) {
+            tienDien = 2.834 * truDien;
+            alert('Tiền điện tháng này: ' + tienDien + ' đồng');
+        } else if (truDien >= 401) {
+            tienDien = 2.927 * truDien;
+            alert('Tiền điện tháng này: ' + tienDien + ' đồng');
+        }
+    }
+
+    function bai11() {
+        let personalIncome = parseFloat(prompt('Mời bạn nhập thu nhập cá nhân (triệu đồng):'));
+        let tax;
+        if (isNaN(personalIncome) || personalIncome <= 0) {
+            alert('Bạn nhập sai yêu cầu');
+        } else switch (true) {
+            case personalIncome <= 5:
+                tax = personalIncome * 5 / 100;
+                alert('Thuế bạn phải đóng : ' + tax + ' triệu đồng');
+                break;
+            case personalIncome <= 10:
+                tax = personalIncome * 10 / 100 - 0.25;
+                alert('Thuế bạn phải đóng : ' + tax + ' triệu đồng');
+                break;
+            case personalIncome <= 18:
+                tax = personalIncome * 15 / 100 - 0.75;
+                alert('Thuế bạn phải đóng : ' + tax + ' triệu đồng');
+                break;
+            case personalIncome <= 32:
+                tax = personalIncome * 20 / 100 - 1.65;
+                alert('Thuế bạn phải đóng : ' + tax + ' triệu đồng');
+                break;
+            case personalIncome <= 52:
+                tax = personalIncome * 25 / 100 - 3.25;
+                alert('Thuế bạn phải đóng : ' + tax + ' triệu đồng');
+                break;
+            case  personalIncome <= 80:
+                tax = personalIncome * 30 / 100 - 5.85;
+                alert('Thuế bạn phải đóng : ' + tax + ' triệu đồng');
+                break;
+            default :
+                tax = personalIncome * 35 / 100 - 9.85;
+                alert('Thuế bạn phải đóng : ' + tax + ' triệu đồng');
+        }
+    }
+
+    function bai12() {
+        let soTienGui = parseFloat(prompt('Nhập số tiền gửi vào ngân hàng (triệu đồng):'));
+        let thang = parseInt(prompt('Nhập số tháng sẽ gừi tiền:'));
+        let laiSuat = parseFloat(prompt('Nhập lãi suất ngân hàng:'));
+        let soTienLai;
+        if (isNaN(soTienGui) || isNaN(thang) || isNaN(laiSuat) || soTienGui <= 0 || thang <= 0 || laiSuat <= 0) {
+            alert('Bạn nhập sai yêu cầu!')
+        } else if (thang < 6) {
+            alert('Bạn phải gửi tiết kiệm từ 6 tháng trở lên!');
+        } else {
+            soTienLai = soTienGui * laiSuat * thang / (100 * 12);
+            alert('Số tiền lãi nhận được : ' + soTienLai + ' triệu đồng');
+        }
+    }
+</script>
+</html>

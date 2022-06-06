@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 01</title>
+</head>
+<body>
+<button onclick="bai1()">Bài 1</button>
+<br>
+<p id="bai1"></p>
+<button onclick="bai2()">Bài 2</button>
+<br>
+<p></p>
+<button onclick="bai3()">Bài 3</button>
+<br>
+<p id="bai3"></p>
+<button onclick="bai4()">Bài 4</button>
+<br>
+<p id="bai4"></p>
+<button onclick="bai5()">Bài 5</button>
+<br>
+<p id="bai5"></p>
+<button onclick="bai6()">Bài 6</button>
+<br>
+<p id="bai6a"></p>
+<p id="bai6b"></p>
+<button onclick="bai7()">Bài 7</button>
+<br>
+<p id="bai7"></p>
+<button onclick="bai8()">Chơi</button>
+<p id="test"></p>
+</body>
+<script>
+    function bai1() {
+        let text = "";
+        let i = 0;
+        while (i < 100) {
+            text += "The number is " + i + "<br>";
+            document.getElementById('bai1').innerHTML = text;
+            i++;
+        }
+        alert('Bạn đã hoàn thành!');
+    }
+
+    function bai2() {
+        let t = prompt('Mời bạn nhập nhiệt độ');
+        while (t <= 20 || t >= 100) {
+            while (t < 20) {
+                t = prompt('Mời bạn tăng nhiệt độ');
+                t++;
+            }
+            while (t > 100) {
+                t = prompt('Mời bạn giảm nhiệt độ');
+                t++;
+            }
+            t++;
+        }
+    }
+
+    function bai3() {
+        let a = 1;
+        let b = 1;
+        let c;
+        let text = a + ' ' + b + ' ';
+        for (i = 1; i <= 18; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+            text += c + ' ';
+        }
+        document.getElementById('bai3').innerHTML = text;
+    }
+
+    function bai4() {
+        let a = 1;
+        let b = 1;
+        let c = 0;
+        do {
+            c = a + b;
+            a = b;
+            b = c;
+        } while (c % 5 != 0)
+        document.getElementById('bai4').innerHTML = c;
+    }
+
+    function bai5() {
+        let a = 1;
+        let b = 1;
+        let c = 0;
+        let i = 1;
+        let sum = a + b;
+        while (i <= 17) {
+            c = a + b;
+            a = b;
+            b = c;
+            sum += c;
+            i++;
+        }
+        document.getElementById('bai5').innerHTML = sum;
+    }
+
+    function bai6() {
+        let i = 1;
+        let check = 0;
+        let sum = 0;
+        text = "";
+        while (i <= 30) {
+            check = check + 7;
+            text += check + " ";
+            sum += check;
+            i++;
+        }
+        document.getElementById('bai6a').innerHTML = text;
+        document.getElementById('bai6b').innerHTML = sum;
+    }
+
+    function bai7() {
+        text = "";
+        for (i = 1; i <= 100; i++) {
+            if (i % 3 == 0) {
+                if (i % 5 == 0) {
+                    text += 'FizzBuzz ';
+                } else {
+                    text += 'Fizz ';
+                }
+            } else if (i % 5 == 0) {
+                text += 'Buzz ';
+            } else {
+                text += i + " ";
+            }
+            document.getElementById('bai7').innerHTML = text;
+        }
+    }
+
+    function bai8() {
+        let a = prompt('Nhập số bắt đầu!!!');
+        let b = prompt('Nhập số kết thúc!!!');
+        let c = Math.floor((Math.random() * b) + a);
+        let d = 0;
+        while (d != c) {
+            d = prompt('Mời bạn nhập số cần đoán!');
+            if (d < c) {
+                alert('Số bạn bé hơn số cần đoán!');
+            }
+            if (d > c) {
+                alert('Số bạn lớn hơn số cần đoán!');
+            }
+        }
+        alert('Chúc mừng bạn!');
+    }
+</script>
+</html>

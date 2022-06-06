@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+<button onclick="tinh()">Hiển thị các số nguyên tố đầu tiên</button>
+</body>
+<script>
+    function tinh() {
+        let numbers = parseInt(prompt());
+        let count = 0; //tổng số nguyên tố
+        let N = 2; //kiểm tra có bao nhiêu số chia hết cho N
+        let dem = 0;//kiểm tra N có phải số nguyên tố hay không
+        while (count < numbers) {
+            dem = 0;
+            for (i = 1; i <= N; i++) {
+                if (N % i == 0) {
+                    dem = dem + 1;
+                }
+            }
+            if (dem == 2) {
+                document.write(N + ' ');
+                count++;
+            }
+            N++;
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 02</title>
+</head>
+<body>
+<button onclick="bai1()">Bài 1</button>
+<p id="bai1"></p>
+<button onclick="bai2()">Bài 2</button>
+<p id="bai2"></p>
+<h2>Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau </h2>
+<button onclick="quesA()">Câu a</button>
+<p></p>
+<button onclick="quesB()">Câu b</button>
+<p></p>
+</body>
+<button onclick="quesC()">Câu c</button>
+<p></p>
+<button onclick="quesD()">Câu d</button>
+<p></p>
+<button onclick="bai4()">Bài 4</button>
+<p></p>
+<button onclick="bai5()">Bài 5</button>
+<p id="bai5"></p>
+<button onclick="bai6()">Bài 6</button>
+<script>
+    function bai1() {
+        let a = 1;
+        let b = 1;
+        let text = a + ' ' + b + ' ';
+        for (i = 0; i <= 30; i++) {
+            c = a + b;
+            b = a;
+            a = c;
+            text += c + ' ';
+        }
+        document.getElementById('bai1').innerHTML = text;
+    }
+
+    function bai2() {
+        let num = parseInt(prompt('Mời bạn nhập số nguyên dương cần tính:'));
+        let result = 1;
+        if (isNaN(num) || num < 0) {
+            alert('Bạn nhập sai yêu cầu!');
+        } else if (num == 0) {
+            document.getElementById('bai2').innerHTML = 1;
+        } else {
+            for (i = 1; i <= num; i++) {
+                result *= i;
+            }
+        }
+        document.getElementById('bai2').innerHTML = result;
+    }
+
+    function quesA() {
+        for (i = 0; i < 5; i++) {
+            for (j = 0; j <= i; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    }
+
+    function quesB() {
+        for (i = 0; i < 5; i++) {
+            for (j = 0; j <= 4 - i; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    }
+
+    function quesC() {
+        for (i = 0; i < 5; i++) {
+            for (j = 0; j < 5; j++)
+                if (j <= 3 - i) {
+                    document.write("&nbsp&nbsp");
+                } else {
+                    document.write("*");
+                }
+            document.write("<br>");
+        }
+    }
+
+    function quesD() {
+        for (i = 0; i < 5; i++) {
+            for (j = 0; j < 5; j++)
+                if (j <= i - 1) {
+                    document.write("&nbsp&nbsp");
+                } else {
+                    document.write("*");
+                }
+            document.write("<br>");
+        }
+    }
+
+    function bai4() {
+        for (i = 0; i < 15; i++) {
+            for (j = 0; j < 7; j++) {
+                if (i == 0 || i == 14 || j == 0 || j == 6) {
+                    document.write("*");
+                } else {
+                    document.write("&nbsp&nbsp");
+                }
+            }
+            document.write("<br>");
+        }
+    }
+
+    function bai5() {
+        let tienGui = parseFloat(prompt('Nhập số tiền gửi(triệu đồng)!'));
+        let laiSuat = parseFloat(prompt('Nhập lãi suất ngân hàng!'));
+        let month = parseFloat(prompt('Nhập số tháng cần gửi!'));
+        let tienLai = tienGui * (laiSuat / 100) * month;
+        parseFloat(tienLai);
+        document.getElementById('bai5').innerHTML = tienLai + ' triệu';
+    }
+
+    function bai6() {
+        for (i = 1; i <= 7; i++) {
+            for (j = 1; j <= 9; j++) {
+                if (i == 1 && (j == 3 || j == 7)) {
+                    document.write("*");
+                } else {
+                    document.write("&nbsp&nbsp");
+                }
+                if (i == 2 && (j == 2 || j == 4 || j == 6 || j == 8)) {
+                    document.write("*");
+                } else {
+                    document.write("&nbsp&nbsp");
+                }
+                if (i == 3 && (j == 1 || j == 5 || j == 9)) {
+                    document.write("*");
+                } else {
+                    document.write("&nbsp&nbsp");
+                }
+                if (i >= 3) {
+                    if (i == 4 && (j == 2 || j == 8)) {
+                        document.write("*");
+                    } else {
+                        document.write("&nbsp&nbsp");
+                    }
+                    if (i == 5 && (j == 3 || j == 7)) {
+                        document.write("*");
+                    } else {
+                        document.write("&nbsp&nbsp");
+                    }
+                    if (i == 6 && (j == 4 || j == 6)) {
+                        document.write("*");
+                    } else {
+                        document.write("&nbsp&nbsp");
+                    }
+                    if (i == 7 && j == 7) {
+                        document.write("*");
+                    } else {
+                        document.write("&nbsp&nbsp");
+                    }
+                }
+            }
+            document.write("<br>");
+        }
+    }
+</script>
+</html>

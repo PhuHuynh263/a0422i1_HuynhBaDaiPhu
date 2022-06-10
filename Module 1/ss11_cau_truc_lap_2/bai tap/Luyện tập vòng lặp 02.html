@@ -120,38 +120,44 @@
     function bai6() {
         for (i = 1; i <= 7; i++) {
             for (j = 1; j <= 9; j++) {
-                if (i == 1 && (j == 3 || j == 7)) {
-                    document.write("*");
-                } else {
-                    document.write("&nbsp&nbsp");
-                }
-                if (i == 2 && (j == 2 || j == 4 || j == 6 || j == 8)) {
-                    document.write("*");
-                } else {
-                    document.write("&nbsp&nbsp");
-                }
-                if (i == 3 && (j == 1 || j == 5 || j == 9)) {
-                    document.write("*");
-                } else {
-                    document.write("&nbsp&nbsp");
-                }
-                if (i >= 3) {
-                    if (i == 4 && (j == 2 || j == 8)) {
+                if (i == 1) {
+                    if (j == 3 || j == 7) {
                         document.write("*");
                     } else {
                         document.write("&nbsp&nbsp");
                     }
-                    if (i == 5 && (j == 3 || j == 7)) {
+                } else if (i == 2) {
+                    if (j == 2 || j == 4 || j == 6 || j == 8) {
                         document.write("*");
                     } else {
                         document.write("&nbsp&nbsp");
                     }
-                    if (i == 6 && (j == 4 || j == 6)) {
+                } else if (i == 3) {
+                    if (j == 1 || j == 5 || j == 9) {
                         document.write("*");
                     } else {
                         document.write("&nbsp&nbsp");
                     }
-                    if (i == 7 && j == 7) {
+                } else if (i == 4) {
+                    if (j == 2 || j == 8) {
+                        document.write("*");
+                    } else {
+                        document.write("&nbsp&nbsp");
+                    }
+                } else if (i == 5) {
+                    if (j == 3 || j == 7) {
+                        document.write("*");
+                    } else {
+                        document.write("&nbsp&nbsp");
+                    }
+                } else if (i == 6) {
+                    if (j == 4 || j == 6) {
+                        document.write("*");
+                    } else {
+                        document.write("&nbsp&nbsp");
+                    }
+                } else if (i == 7) {
+                    if (j == 5) {
                         document.write("*");
                     } else {
                         document.write("&nbsp&nbsp");

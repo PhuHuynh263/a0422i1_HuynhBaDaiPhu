@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập</title>
+</head>
+<body>
+<button onclick="bai1()">Bài 1: Viết chương trình in ra các dấu * theo cấu trúc như sau (cho n là chiều cao của tháp,
+    cần
+    in ra n
+    dòng):
+</button>
+<br>
+<button onclick="bai2()">Bài 2: Nhập vào tháng, năm bất kỳ. In ra số ngày tương ứng với tháng, năm đó</button>
+<br>
+<button onclick="bai3()">Bài 3: Viết chương trình tính :
+    S=1+1/2+1/3+....+1/n
+</button>
+<br>
+<button onclick="bai4()">Bài 4: Viết chương trình tính :
+    S=15-1+1/2-1/3!+....+(-1)n 1/n!
+</button>
+<br>
+<button onclick="bai5()">Bài 5:Viết chương trình tính :
+    S=1+1/3!+1/5!+…..+1/(2n-1)!
+</button>
+<br>
+</body>
+<script>
+    function bai1() {
+        let n = parseInt(prompt('Nhập số dòng n:'));
+        for (i = 0; i < n; i++) {
+            for (j = 0; j < n; j++) {
+                document.write("*");
+            }
+            document.write("<br>");
+        }
+    }
+
+    function bai2() {
+        let month = parseInt(prompt('Nhập Tháng:'));
+        let year = parseInt(prompt('Nhập năm:'));
+        if (isNaN(month) || isNaN(year) || month <= 0 || year <= 0 || month > 12) {
+            alert('Bạn nhập sai yêu cầu');
+        } else {
+            switch (true) {
+                case month == 1:
+                case month == 3:
+                case month == 5:
+                case month == 7:
+                case month == 8:
+                case month == 10:
+                case month == 12:
+                    alert('Tháng ' + month + ' có 31 ngày');
+                    break;
+                case month == 2:
+                    alert('Tháng ' + month + ' có 28 hoặc 29 ngày');
+                    break;
+                case month == 4:
+                case month == 6:
+                case month == 9:
+                case month == 11:
+                    alert('Tháng ' + month + ' có 30 ngày');
+                    break;
+            }
+            if (year % 4 == 0) {
+                if (year % 100 == 0) {
+                    if (year % 400 == 0) {
+                        alert(year + " là năm nhuận " + 'có 366 ngày');
+                    } else {
+                        alert(year + " không là năm nhuận " + 'có 365 ngày');
+                    }
+                } else {
+                    alert(year + " là năm nhuận " + 'có 366 ngày');
+                }
+            } else {
+                alert(year + " không là năm nhuận " + 'có 365 ngày');
+            }
+        }
+    }
+
+    function bai3() {
+        let n = parseFloat(prompt('Nhập n'));
+        let sum = 0;
+        for (i = 1; i <= n; i++) {
+            sum += 1 / i;
+        }
+        alert(sum);
+    }
+
+    function bai4() {
+        let n = parseFloat(prompt('Nhập n'));
+        let vol = 1;
+        let sum = 0
+        let sub = 0;
+        let result;
+        for (i = 1; i <= n; i++) {
+            if (i % 2 == 0) {
+                vol = vol * i;
+                sum += 1 / vol;
+            } else {
+                vol = vol * i;
+                sub += 1 / vol;
+            }
+        }
+        result = 15 + sum - sub;
+        alert(result);
+    }
+
+    function bai5() {
+        let n = parseFloat(prompt('Nhập n'));
+        let sum = 0;
+        for (i=1;i<=n;i++){
+            sum +=1/mau;
+        }
+        alert(sum);
+    }
+</script>
+</html>

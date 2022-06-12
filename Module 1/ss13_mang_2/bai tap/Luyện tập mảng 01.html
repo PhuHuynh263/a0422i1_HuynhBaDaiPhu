@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 01</title>
+</head>
+<body>
+<button onclick="bai1()">Bài 1:</button>
+<button onclick="bai2()">Bài 2:</button>
+<button onclick="bai3()">Bài 3:</button>
+<button onclick="bai4()">Bài 4:</button>
+<button onclick="bai5()">Bài 5:</button>
+<button onclick="bai6()">Bài 6:</button>
+<button onclick="bai7()">Bài 7:</button>
+<button onclick="bai8()">Bài 8:</button>
+<button onclick="bai9()">Bài 9:</button>
+</body>
+<script>
+    function bai1() {
+        let numbers = [1, 4, 5, 12, 85, 41, 13, 7, 9, 10];
+        let result = '';
+        let sum = 0;
+        for (i = 0; i < numbers.length; i++) {
+            if (numbers[i] >= 10) {
+                result += numbers[i] + ' ';
+                sum += 1;
+            }
+        }
+        document.write('Có ' + sum + ' số lớn hơn hoặc bằng 10 là: ' + result);
+    }
+
+    function bai2() {
+        let numbers = [1, 4, 5, 12, 85, 41, 13, 7, 9, 10];
+        let max = numbers[0];
+        let index = 0;
+        for (i = 0; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+                index = i;
+            }
+        }
+        document.write('Số lớn nhất trong mảng là ' + max + ' ở vị trí thứ  ' + index + ' của mảng.');
+    }
+
+
+    function bai3() {
+        let numbers = [1, 4, 5, 12, 85, 41, 13, 7, 9, 10];
+        let max = numbers[0];
+        let sum = 0;
+        let avg;
+        let index = 0;
+        for (i = 0; i < numbers.length; i++) {
+            sum += numbers[i];
+            avg = sum / numbers.length;
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+        document.write('Số lớn nhất trong mảng là ' + max + '<br>' +
+            'Giá trị trung bình của mảng là : ' + avg);
+    }
+
+    function bai4() {
+        let numbers = [1, 4, 5, 12, 85, 41, 13, 7, 9, 10];
+        document.write(numbers + '<br>');
+        let first = 0;
+        let last = numbers.length - 1;
+        while (first < last) {
+            let a = numbers[first]
+            numbers[first] = numbers[last]
+            numbers[last] = a
+            first++
+            last--
+        }
+        document.write(numbers);
+    }
+
+    function bai5() {
+        let numbers = [1, 4, -5, 12, -85, 41, -13, 7, -9, 10];
+        let dem = 0;
+        let result = '';
+        for (i = 0; i < numbers.length; i++) {
+            if (numbers[i] < 0) {
+                result += numbers[i] + ',';
+                dem += 1;
+            }
+        }
+        document.write('Có ' + dem + ' Số nguyên âm trong chuỗi là : ' + result);
+    }
+
+    function bai6() {
+        let numbers = [1, 4, 5, 12, 85, 41, 13, 7, 9, 10];
+        let V = parseInt(prompt('Mời nhập số!'));
+        let a = numbers.indexOf(V);
+        if (a !== -1) {
+            alert(V + ' is in the array');
+        } else {
+            alert(V + ' is not in the array');
+        }
+    }
+
+    function bai7() {
+        let numbers = [1, 4, 5, 12, 85, 41, 13, 7, 9, 10];
+        let V = parseInt(prompt('Mời nhập số!'));
+        let a = numbers.indexOf(V);
+        if (a !== -1) {
+            for (i = 0; i < numbers.length; i++) {
+                numbers[i] = numbers[i + 1];
+            }
+            numbers[numbers.length - 1] = 0;
+        } else {
+            alert(V + ' is not in the array');
+        }
+        document.write(numbers);
+    }
+
+    function bai8() {
+        let numbers = [1, 4, 5, 12, 85, 41, 13, 7, 9, 10];
+        for (i = 0; i < numbers.length - 1; i++) {
+            for (j = i; j < numbers.length; j++) {
+                if (numbers[i] < numbers[j]) {
+                    temp = numbers[i];
+                    numbers[i] = numbers[j];
+                    numbers[j] = temp;
+                }
+            }
+        }
+        document.write(numbers);
+    }
+
+
+    function bai9() {
+        let a = [1, 4, 5, 12, 85, 41, 13, 7, 9, 10];
+        let b = [15, 17, 18, 19, 54, 24, 87, 13, 59, 78];
+        let c = [];
+        for (i=0;i<10;i++){
+            if (a[i]!=b[i]){
+                a+=','+b[i];
+            }
+        }
+        document.write(a);
+    }
+</script>
+</html>

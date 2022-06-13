@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<input type="text" id="engilish">
+<button onclick="trans()">Dịch</button>
+</body>
+<script>
+    function trans() {
+        let a = ['Dog', 'Cat', 'Bird'];
+        let b = ['Chó', 'Mèo', 'Chim'];
+        let c = document.getElementById('engilish').value;
+        let d = a.indexOf(c);
+        if (d !== -1) {
+            document.writeln(a[d] + ' nghĩa là ' + b[d]);
+        } else {
+            document.writeln('Không tìm thấy!');
+        }
+    }
+</script>
+</html>

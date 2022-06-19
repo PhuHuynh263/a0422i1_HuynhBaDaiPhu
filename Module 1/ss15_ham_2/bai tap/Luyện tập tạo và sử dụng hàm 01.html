@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm 01</title>
+</head>
+<body>
+<button onclick="alertMessage()">Bài 1:</button>
+<button onclick="bai2()">Bài 2:</button>
+<button onclick="bai3()">Bài 3:</button>
+<button onclick="bai4()">Bài 4:</button>
+<button onclick="bai5()">Bài 5:</button>
+</body>
+<script>
+    function alertMessage() {
+        alert('Xin Chào')
+    }
+
+    function bai2() {
+        let a = parseInt(prompt('Mời bạn nhập số:'));
+        let result = tangDoiSoLen1(a);
+        alert(result);
+
+        function tangDoiSoLen1(a) {
+            return a + 1;
+        }
+    }
+
+    function bai3() {
+        let a = parseInt(prompt('Mời bạn nhập số đầu tiên:'));
+        let b = parseInt(prompt('Mời bạn nhập số thứ hai:'));
+        if (a > b) {
+            alert('Số đầu tiên là : ' + a
+                + ' Số thứ hai là : ' + b)
+        } else {
+            let c = kiemTra(a, b);
+            alert(c);
+        }
+
+        function kiemTra(a, b) {
+            return a + b;
+        }
+    }
+
+    function bai4() {
+        function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+        }
+
+        result = 0;
+        alert('Giá trị trước khi gọi hàm là : ' + result);
+        result = addNumbers();
+        alert('Giá trị sau khi gọi hàm là : ' + result);
+    }
+
+    function bai5() {
+        let a = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        let b = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+        let c = prompt('Mời bạn nhập ngôi sao :');
+        timKiemChomSao(c);
+
+        function timKiemChomSao(c) {
+            let index = a.indexOf(c);
+            if (index !== -1) {
+                document.write('Ngôi sao ' + a[index] + ' thuộc chòm sao ' + b[index]);
+            } else {
+                document.write('Không tìm thấy ngôi sao này!');
+            }
+
+        }
+
+    }
+</script>
+</html>

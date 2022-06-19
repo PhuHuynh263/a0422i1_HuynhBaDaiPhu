@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+<button onclick="footToMeter()">FootToMeter</button>
+<button onclick="meterToFoot()">MeterToFoot</button>
+</body>
+<script>
+    function footToMeter() {
+        let foot = prompt('Mời bạn nhập số foot:');
+        meter = 0.305 * foot
+        alert(foot + ' food = ' + meter + ' meter')
+    }
+
+    function meterToFoot() {
+        let meter = prompt('Mời bạn nhập số mêtr:');
+        foot = 3.279 * meter
+        alert(meter + ' meter = ' + foot + ' foot ')
+    }
+</script>
+</html>

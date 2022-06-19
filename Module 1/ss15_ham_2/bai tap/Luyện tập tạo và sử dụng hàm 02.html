@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm 02</title>
+</head>
+<body>
+<button onclick="bai1()">Bài 1:</button>
+<button onclick="bai2()">Bài 2:</button>
+<button onclick="bai3()">Bài 3:</button>
+<button onclick="bai4()">Bài 4:</button>
+<button onclick="bai5()">Bài 5:</button>
+<button onclick="bai6()">Bài 6:</button>
+<button onclick="bai7()">Bài 7:</button>
+<button onclick="bai8()">Bài 8:</button>
+<button onclick="bai9()">Bài 9:</button>
+</body>
+<script>
+    function bai1() {
+        let a = parseInt(prompt('Mời bạn nhập số bất kỳ:'));
+        b = a * a;
+        alert(b);
+    }
+
+    function bai2() {
+        let r = parseFloat(prompt('Mời bạn nhập bán kính hình tròn (m) :'));
+        let PI = 3.14;
+        S = r * r * PI;
+        C = 2 * r * PI;
+        alert('Diện tích hình tròn là : ' + S + ' Chu vi hình tròn là : ' + C);
+    }
+
+    function bai3() {
+        let a = parseInt(prompt('Mời bạn nhập số nguyên bất kỳ:'));
+        if (isNaN(a) || a < 0) {
+            alert('Bạn nhập sai yêu cầu!');
+        } else if (a != 0) {
+            for (i = 1; i <= a; i++) {
+                let result = 1;
+                result *= i
+            }
+        } else {
+            alert('Giai thừa của 0 là 1');
+        }
+        alert(result);
+    }
+
+    function bai4() {
+        let a = prompt('Ký tự bạn vừa nhập có phải ký tự số?!');
+        let b = kiemTraKyTu(a);
+        alert(b);
+
+        function kiemTraKyTu(a) {
+            if (isNaN(a)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
+
+    function bai5() {
+        let a = prompt('Mời bạn nhập số đầu tiên');
+        let b = prompt('Mời bạn nhập số thứ hai');
+        let c = prompt('Mời bạn nhập số thứ ba');
+        let min;
+        let result = giaTriNhoNhat(a, b, c);
+        alert(result);
+
+        function giaTriNhoNhat(a, b, c) {
+            if (a < b) {
+                if (a < c) {
+                    min = a;
+                } else {
+                    min = c;
+                }
+            } else {
+                if (b < c) {
+                    min = b;
+                } else {
+                    min = c
+                }
+            }
+            return min;
+        }
+    }
+
+
+    function bai6() {
+        let a = parseInt(prompt('Mời bạn nhập số nguyên bất kỳ:'));
+        let b = kiemTraSoNguyen(a);
+        alert(b);
+
+        function kiemTraSoNguyen(a) {
+            if (isNaN(a)) {
+                alert('Bạn nhập không phải số!');
+            } else {
+                if (a > 0) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+    }
+
+    function bai7() {
+        let a = prompt('Mời bạn nhập số đầu tiên');
+        let b = prompt('Mời bạn nhập số thứ hai');
+        alert('Số a và b lúc chưa đổi là : ' + a + ' , ' + b);
+        swap(a, b);
+
+        function swap(a, b) {
+            let temp;
+            temp = a;
+            a = b;
+            b = temp;
+            alert('Số a và b lúc đổi là : ' + a + ' , ' + b);
+        }
+    }
+
+    function bai8() {
+        let arr = [1, 2, 3, 4, 5, 6, 'a', 'b', 'c'];
+        alert(arr);
+        let last = arr.length - 1;
+        let first = 0;
+        while (first < last) {
+            let a = arr[first]
+            arr[first] = arr[last]
+            arr[last] = a
+            first++;
+            last--;
+        }
+        alert(arr);
+    }
+
+    function bai9() {
+        let a = 'Toi-La-Huynh-Ba-Dai-Phu';
+        let b = prompt('Mời bạn nhập một ký tự cần kiểm tra!');
+        let c = a.indexOf(b);
+        let dem = 0;
+        let result = kiemTra(a, b);
+        alert(result);
+
+        function kiemTra(a, b) {
+            if (c !== -1) {
+                for (i = 0; i < a.length; i++) {
+                    if (a[i] === b) {
+                        dem += 1;
+                    }
+                }
+                return dem;
+            } else {
+                return -1;
+            }
+        }
+    }
+</script>
+</html>

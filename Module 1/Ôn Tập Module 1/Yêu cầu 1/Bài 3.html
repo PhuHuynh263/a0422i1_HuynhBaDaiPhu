@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let h = parseInt(prompt("Nhập vào chiều cao tam giác: "));
+    for (i = 1; i <= h; i++) {
+        for (j = 1; j <= h - i; j++) {
+            document.write("&nbsp&nbsp");
+        }
+        for (j = 1; j <= 2 * i - 1; j++) {
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+</body>
+<script>
+    let string = prompt('Mời bạn nhập bất kỳ');
+    document.write(string + '<br>')
+    let text = "";
+    arr = string.split(" ") //tách chuỗi vào mảng theo khoảng trắng
+    for (let i = 0; i < arr.length; i++) {
+        temp = arr[i].trim().toLowerCase();//xóa khoảng trắng trước và sau từ,chuyển về chữ thưởng
+        if (temp != "") {
+            temp = temp.substr(0, 1).toUpperCase() + temp.substr(1);
+            text += temp + " "
+        }
+    }
+    document.write(text.trim())
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+</body>
+<script>
+    let exam = prompt('Mời bạn nhập bất kỳ');
+    let dem = 0;
+    for (let i = 0; i < exam.length - 1; i++) {
+        for (j = i + 1; j < exam.length; j++) {
+            if (exam[i] != exam[j]) {
+                temp = exam[i];
+                exam[i] = exam[j];
+                exam[j] = temp;
+            }
+        }
+    }
+
+</script>
+</html>

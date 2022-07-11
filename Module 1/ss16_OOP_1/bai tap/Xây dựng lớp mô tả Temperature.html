@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Temperature {
+        constructor(C) {
+            this.C = C;
+        }
+
+        chuyendoCsangdoF() {
+            return (9 / 5 * this.C + 32);
+        }
+
+        chuyendoCsangdoK() {
+            return (this.C + 273.15);
+        }
+    }
+
+    let a = parseInt(prompt('Mời bạn nhập độ C:'));
+    let b = new Temperature(a);
+    let x = b.chuyendoCsangdoF();
+    let y = b.chuyendoCsangdoK();
+    alert('Độ F: ' + x + '  Độ K: ' + y);
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100"></canvas>
+</body>
+<script>
+    class Rectangle {
+        constructor(length, width) {
+            this.lenght = length;
+            this.width = width;
+        }
+
+        acreage() {
+            return (this.lenght * this.width);
+        }
+
+        perimeter() {
+            return ((this.lenght + this.width) * 2);
+        }
+
+        canvas() {
+            let canvas = document.getElementById("myCanvas");
+            let ctx = canvas.getContext("2d");
+            ctx.fillRect(10, 10, this.lenght, this.width);
+        }
+    }
+    let a = parseInt(prompt('Mời bạn nhập chiều dài'));
+    let b = parseInt(prompt('Mời bạn nhập chiều rộng'));
+    let c = new Rectangle(a, b);
+    let dienTich = c.acreage();
+    let chuVi = c.perimeter();
+    alert('Diện tích HCN : ' + dienTich + ' ' + ' Chu vi HCN : ' + chuVi);
+    let d = c.canvas();
+    document.write(d);
+</script>
+</html>

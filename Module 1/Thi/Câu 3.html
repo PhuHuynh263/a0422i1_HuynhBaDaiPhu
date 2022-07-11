@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 3</title>
+</head>
+<body>
+<script>
+    let numbers = [];
+    let result = [];
+    let size = parseInt(prompt('Mời bạn nhập độ dài của mảng'));
+    for (let i = 1; i <= size; i++) {
+        numbers.push(prompt('Mời bạn nhập phần tử thứ ' + i));
+    }
+    let n = parseInt(prompt('Nhập số nguyên n : '));
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] % n == 0) {
+            result.push(numbers[i]);
+        }
+    }
+
+    for (let i = 0; i < result.length; i++) {
+        let count = 0;
+        for (j = i + 1; j < result.length; j++) {
+            if (result[i] == result[j]) {
+                count++;
+            }
+        }
+        if (count == 0) {
+            document.write(result[i] + ' ');
+        }
+    }
+    document.write('<br>' + 'Có ' + (result.length - 1) + ' số trong mảng chia hết cho ' + n);
+</script>
+</body>
+</html>

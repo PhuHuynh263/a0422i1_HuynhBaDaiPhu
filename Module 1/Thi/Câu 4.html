@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 4</title>
+</head>
+<body>
+<input type="text" id="name" placeholder="Fullname">
+<input type="text" id="age" placeholder="Age">
+<input type="text" id="address" placeholder="Address">
+<input type="text" id="phone" placeholder="Phone Number">
+<input type="button" onclick="addNewPerson()" value="ADD">
+<p id="result"></p>
+</body>
+<script>
+    class Person {
+        constructor(name, age, address, phone) {
+            this.name = name;
+            this.age = age;
+            this.address = address;
+            this.phone = phone;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setAge(age) {
+            this.age = age;
+        }
+
+        getAge() {
+            return this.age;
+        }
+
+        setAddress(address) {
+            this.address = address;
+        }
+
+        getAddress() {
+            return this.address;
+        }
+
+        setPhone(phone) {
+            this.phone = phone;
+        }
+
+        getPhone() {
+            return this.phone;
+        }
+    }
+
+    let personList = [];
+    display(personList);
+
+    function addNewPerson() {
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+        let address = document.getElementById("address").value;
+        let phone = document.getElementById("phone").value;
+        let newPerson = new Person(name, age, address, phone);
+        personList.push(newPerson);
+        display(personList);
+    }
+
+    function deletePerson(index) {
+        let comfirm = confirm('Bạn có muốn xóa bệnh nhân : ' + personList[index].getName())
+        if (comfirm) {
+            personList.splice(index, 1);
+        }
+        display(personList);
+    }
+
+    function display(Persons) {
+        let tableString = '<table border="1" style="border-collapse: collapse" width="100%" >\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Name</th>\n' +
+            '        <th>Age</th>\n' +
+            '        <th>Address</th>\n' +
+            '        <th>Phone Number</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < Persons.length; i++) {
+            tableString += '<tr>\n' +
+                '        <td>' + (1 + i) + '</td>\n' +
+                '        <td>' + Persons[i].getName() + '</td>\n' +
+                '        <td>' + Persons[i].getAge() + '</td>\n' +
+                '        <td>' + Persons[i].getAddress() + '</td>\n' +
+                '        <td>' + Persons[i].getPhone() + '</td>\n' +
+                '        <td><button type="button" onclick="deletePerson(' + i + ')">Delete</button></td>\n' +
+                '    </tr>';
+        }
+        tableString += '</table>'
+        document.getElementById("result").innerHTML = tableString;
+    }
+</script>
+</html>

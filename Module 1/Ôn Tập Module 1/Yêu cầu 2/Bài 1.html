@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+</body>
+<script>
+    let a = parseInt(prompt('Mời bạn nhập lương (triệu đồng) :'));
+    if (a >= 15) {
+        a = a - 20 * a / 100;
+        alert('Thu nhập của bạn là : ' + a + ' triệu đồng');
+    } else if (a >= 7 && a < 15) {
+        a = a - 10 * a / 100;
+        alert('Thu nhập của bạn là : ' + a + ' triệu đồng');
+    } else {
+        a = a - 5 * a / 100;
+        alert('Thu nhập của bạn là : ' + a + ' triệu đồng');
+    }
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 2</title>
+</head>
+<body>
+<script>
+    let numbers = [];
+    let size = parseInt(prompt('Mời bạn nhập độ dài của mảng'));
+    for (let i = 1; i <= size; i++) {
+        numbers.push(prompt('Mời bạn nhập phần tử thứ ' + i));
+    }
+
+    function findMin() {
+        let min = numbers[0];
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] < min) {
+                min = numbers[i];
+            }
+        }
+        return min;
+    }
+
+    function findMax() {
+        let max = numbers[0];
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] > max) {
+                max = numbers[i];
+            }
+        }
+        return max;
+    }
+
+    let result = [];
+    function displayMinMaxIndex() {
+        let index_min = numbers.indexOf(findMin());
+        let index_max = numbers.indexOf(findMax());
+        result.push(index_min);
+        result.push(index_max);
+        return result;
+    }
+
+    document.write(numbers + '<br>');
+    document.write(displayMinMaxIndex(numbers));
+</script>
+</body>
+</html>

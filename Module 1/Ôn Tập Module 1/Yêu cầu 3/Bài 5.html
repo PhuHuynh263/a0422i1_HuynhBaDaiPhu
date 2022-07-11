@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<ol>
+    <li>Cafe</li>
+    <li>Cam vắt</li>
+    <li>Nước ép cà rốt</li>
+    <li>Nước ép cà chua</li>
+    <li>Nước lọc</li>
+    <li>Nước dừa</li>
+</ol>
+<button onclick="oderFruit()">Oder</button>
+</body>
+<script>
+    function oderFruit() {
+        let oder = parseInt(prompt('Mời bạn nhập oder'));
+        if (oder >= 7) {
+            document.write('Cảm ơn bạn đã sử dụng dịch vụ bên tôi');
+        } else {
+            do {
+                let amount = parseInt(prompt('Mời bạn nhập số lượng oder'));
+                switch (oder) {
+                    case 1:
+                        document.write('Bạn đã chọn cafe' + '<br>' + 'Số lượng : ' + amount)
+                        break;
+                    case 2:
+                        document.write('Bạn đã chọn Cam vắt' + '<br>' + 'Số lượng : ' + amount)
+                        break;
+                    case 3:
+                        document.write('Bạn đã chọn Nước ép cà rốt' + '<br>' + 'Số lượng : ' + amount)
+                        break;
+                    case 4:
+                        document.write('Bạn đã Nước lọc' + '<br>' + 'Số lượng : ' + amount)
+                        break;
+                    case 5:
+                        document.write('Bạn đã Nước lọc' + '<br>' + 'Số lượng : ' + amount)
+                        break;
+                    case 6:
+                        document.write('Bạn đã Nước dừa' + '<br>' + 'Số lượng : ' + amount)
+                        break;
+                }
+            } while (oder > 7)
+        }
+    }
+</script>
+</html>

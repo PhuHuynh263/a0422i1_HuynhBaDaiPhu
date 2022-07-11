@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+</body>
+<script>
+    let numerators = [5, 2, 5];
+    let denominators = [6, 3, 4];
+    let TSmax = numerators[0];
+    let MSmax = denominators[0];
+    let index = 0;
+    for (i = 0; i < numerators.length; i++) {
+        if (numerators[i] * MSmax - denominators[i] * TSmax > 0) {
+            TSmax = numerators[i];
+            MSmax = denominators[i];
+            index = i;
+        }
+    }
+    document.write('Phân số lớn nhất là : ' + TSmax / MSmax + ' chỉ số là : ' + index);
+</script>
+</html>

@@ -33,14 +33,18 @@ public class Square extends Shape {
                 + super.toString();
     }
 
-    double getArea() {
+    public double getArea() {
         return side * side;
     }
 
     @Override
     public String howToColor(String color) {
-        this.setColor(color);
-        return color;
+        return null;
+    }
+
+    @Override
+    public void howToColor() {
+        System.out.println("Color is all four side...");
     }
 }
 

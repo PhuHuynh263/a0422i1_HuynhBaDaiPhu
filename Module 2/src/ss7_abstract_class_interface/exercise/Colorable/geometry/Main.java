@@ -9,12 +9,10 @@ public class Main {
         for (Shape a : shapes) {
             System.out.println(a);
         }
-        System.out.println("========================================");
-        System.out.println("A square with color " + shapes[2].getColor());
-        System.out.println("===============Colorable================");
-
+        System.out.println("=============================");
         //ColorableSquare
-        shapes[2].howToColor("Black");
-        System.out.println("A square with colorable " + shapes[2].getColor());
+        shapes[2].howToColor();
+        shapes[2].getArea();
+        System.out.println("Square with area = " + shapes[2].getArea());
     }
 }

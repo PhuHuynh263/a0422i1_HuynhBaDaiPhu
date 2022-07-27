@@ -43,4 +43,14 @@ public abstract class Shape implements Colorable {
             System.out.println(x.toString());
         }
     }
+
+    public double getArea() {
+        return 0;
+    }
+
+    public double getPerimeter() {
+        return 0;
+    }
+
+    public abstract String howToColor(String color);
 }

@@ -60,4 +60,8 @@ public class Rectangle extends Shape {
         this.setColor(color);
         return color;
     }
+
+    @Override
+    public void howToColor() {
+    }
 }

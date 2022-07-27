@@ -38,9 +38,18 @@ public abstract class Shape implements Resizeable {
                 + (isFilled() ? "filled" : "not filled");
     }
 
+
     public static void printShape(Shape[] shape) {
         for (Shape x : shape) {
             System.out.println(x.toString());
         }
+    }
+
+    public double getArea() {
+        return 0;
+    }
+
+    public double getPerimeter() {
+        return 0;
     }
 }

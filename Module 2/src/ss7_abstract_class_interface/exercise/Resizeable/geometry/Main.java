@@ -20,24 +20,23 @@ public class Main {
         System.out.println("===============Resize================");
 
         //ResizeCircle
-        Circle circle = new Circle();
-        circle.resize(z);
-        circle.getArea();
-        System.out.println("A Circle with ResizeArea = " + circle.getArea());
+        shapes[0].resize(z);
+        shapes[0].getArea();
+        System.out.println("A Circle with ResizeArea = " + shapes[0].getArea());
 
 
         //ResizeCircle
-        Rectangle rectangle = new Rectangle();
-        rectangle.resize(z);
-        rectangle.getArea();
-        rectangle.getPerimeter();
-        System.out.println("A Rectangle with ResizeArea = " + circle.getArea() + ", and Perimeter = " + circle.getPerimeter());
+        shapes[1].resize(z);
+        shapes[1].getArea();
+        shapes[1].getPerimeter();
+        System.out.println("A Rectangle with ResizeArea = "
+                + shapes[1].getArea()
+                + ", and ResizePerimeter = "
+                + shapes[1].getPerimeter());
 
-
-        //ResizeSquare
-        Square square = new Square();
-        square.resize(z);
-        square.getArea();
-        System.out.println("A Square with ResizeArea = " + square.getArea());
+//        //ResizeSquare
+        shapes[2].resize(z);
+        shapes[2].getArea();
+        System.out.println("A Square with ResizeArea = " + shapes[2].getArea());
     }
 }
